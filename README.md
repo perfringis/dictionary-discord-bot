@@ -1,2 +1,0 @@
-# dictionary-discord
-dictionary-discord
