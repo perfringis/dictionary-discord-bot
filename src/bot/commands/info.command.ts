@@ -14,8 +14,7 @@ import {
 export class InfoCommand {
   @Handler()
   onInfo(interaction: CommandInteraction): InteractionReplyOptions {
-
-    const exampleEmbed = new EmbedBuilder()
+    const embedInfo = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle('slowink-polkowicki-bot')
       .setURL('https://github.com/perfringis/dictionary-discord-bot')
@@ -33,7 +32,7 @@ export class InfoCommand {
       });
 
     return {
-      embeds: [exampleEmbed],
+      embeds: [embedInfo],
     };
   }
 }
