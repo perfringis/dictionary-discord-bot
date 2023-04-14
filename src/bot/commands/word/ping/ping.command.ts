@@ -1,7 +1,6 @@
 import { Command, Handler } from '@discord-nestjs/core';
 import { Injectable } from '@nestjs/common';
 import {
-  CommandInteraction,
   EmbedBuilder,
   InteractionReplyOptions,
 } from 'discord.js';
@@ -13,7 +12,7 @@ import {
 @Injectable()
 export class PingCommand {
   @Handler()
-  onPing(interaction: CommandInteraction): InteractionReplyOptions {
+  onPing(): InteractionReplyOptions {
     
     const exampleEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
