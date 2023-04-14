@@ -20,23 +20,16 @@ export class InfoCommand {
       .setTitle('slowink-polkowicki-bot')
       .setURL('https://github.com/perfringis/dictionary-discord-bot')
       .setDescription('Slownik polkowicki to encyklopedia neologizmow(nowomowy), ktore zostaly sworzone w pewnej mordowni(firmie) na S. Autorem wiekszosci neologizmow jest Xubo. Slownik jest trzecim nawazniejszym dokumentem w polsce po gwarze slaskiej oraz jezyku kaszubskim. Zbior zawiera definicje wraz z kompleksowym wyjasnieniem. Proba rekonstrukcji definicji przypada na 2019 do 2023.')
-      .setThumbnail('https://i.imgur.com/AfFp7pu.png')
-      .addFields(
-        { name: 'Regular field title', value: 'Some value here' },
-        { name: '\u200B', value: '\u200B' },
-        { name: 'Inline field title', value: 'Some value here', inline: true },
-        { name: 'Inline field title', value: 'Some value here', inline: true },
-      )
-      .addFields({
-        name: 'Inline field title',
-        value: 'Some value here',
-        inline: true,
-      })
-      .setImage('https://i.imgur.com/AfFp7pu.png')
+      .setThumbnail('https://avatars.githubusercontent.com/u/9162152')
+      // .addFields(
+      //   { name: '\u200B', value: '\u200B' },
+      //   { name: 'Komendy', value: 'Spis wszystkich komend' },
+      // )
+      .setImage('https://avatars.githubusercontent.com/u/9162152')
       .setTimestamp()
       .setFooter({
-        text: 'Some footer text here',
-        iconURL: 'https://i.imgur.com/AfFp7pu.png',
+        text: 'slowink-polkowicki-bot',
+        iconURL: 'https://avatars.githubusercontent.com/u/9162152',
       });
 
     return {
