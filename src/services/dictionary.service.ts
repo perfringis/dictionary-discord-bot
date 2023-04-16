@@ -16,4 +16,16 @@ export class DictionaryService {
       new Dictionary(dictionaryDto.word, dictionaryDto.meaning),
     );
   }
+
+  async getRandomWord(): Promise<Dictionary> {
+    const randomIndex = Math.floor(
+      Math.random() * (await this.dictionaryRepository.count()),
+    );
+
+    return this.dictionaryRepository
+      .createQueryBuilder('dictionary')
+      .orderBy('random()')
+      .skip(randomIndex)
+      .getOne();
+  }
 }
