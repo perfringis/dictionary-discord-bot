@@ -4,8 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DiscordModule } from '@discord-nestjs/core';
 import { GatewayIntentBits } from 'discord.js';
 
-import { AppController } from './controller/app.controller';
-import { AppService } from './service/app.service';
+import { AppController } from './controllers/app.controller';
+import { AppService } from './services/app.service';
 import { BotModule } from './bot/bot.module';
 
 @Module({
