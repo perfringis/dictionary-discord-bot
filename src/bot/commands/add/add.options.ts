@@ -5,5 +5,5 @@ export class AddOptions {
   word: string;
 
   @Param({ description: 'znaczenie', required: true, type: ParamType.STRING })
-  meaning: number;
+  meaning: string;
 }
