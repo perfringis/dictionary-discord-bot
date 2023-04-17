@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DictionaryDto } from 'src/dto/dictionary.dto';
 import { DictionaryEntity } from 'src/entities/dictionary.entity';
-import { Repository } from 'typeorm';
+import { Repository, UpdateResult } from 'typeorm';
 
 @Injectable()
 export class DictionaryService {
@@ -27,5 +27,18 @@ export class DictionaryService {
       .orderBy('random()')
       .skip(randomIndex)
       .getOne();
+  }
+
+  findByWord(word: string): Promise<DictionaryEntity> {
+    return this.dictionaryRepository.findOneBy({ word: word });
+  }
+
+  update(dictionaryDto: DictionaryDto): Promise<UpdateResult> {
+    return this.dictionaryRepository.update({
+      word: dictionaryDto.word
+    }, {
+      word: dictionaryDto.word,
+      meaning: dictionaryDto.meaning,
+    });
   }
 }

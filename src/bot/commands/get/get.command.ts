@@ -9,7 +9,7 @@ import { DictionaryService } from 'src/services/dictionary.service';
 
 @Command({
   name: 'get',
-  description: 'Wez losowa definicje.',
+  description: 'Wez losowa definicje',
 })
 @Injectable()
 export class GetCommand {

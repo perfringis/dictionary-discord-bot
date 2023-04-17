@@ -7,14 +7,19 @@ import { DictionaryService } from '../services/dictionary.service';
 import { DictionaryEntity } from '../entities/dictionary.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GetCommand } from './commands/get/get.command';
+import { CorrectCommand } from './commands/correct/correct.command';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([DictionaryEntity]), DiscordModule.forFeature()],
+  imports: [
+    TypeOrmModule.forFeature([DictionaryEntity]),
+    DiscordModule.forFeature(),
+  ],
   providers: [
     BotGateway,
     InfoCommand,
     AddCommand,
     GetCommand,
+    CorrectCommand,
     DictionaryService,
   ],
 })
