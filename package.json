@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./e2e.config.json",
-    "db:seed": "ts-node ./src/database/runSeeder.ts"
+    "db:seed": "ts-node ./src/database/runSeeder.ts",
+    "seed:build:start": "yarn run db:seed & yarn run build & yarn run start:prod"
   },
   "dependencies": {
     "@discord-nestjs/common": "^5.2.3",
