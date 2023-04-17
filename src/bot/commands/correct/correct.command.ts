@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 import { CorrectOptions } from './correct.options';
 import { DictionaryService } from 'src/services/dictionary.service';
 import { DictionaryDto } from 'src/dto/dictionary.dto';
-import { CommandInteraction, EmbedBuilder } from 'discord.js';
+import { CommandInteraction } from 'discord.js';
 
 @Command({
   name: 'correct',
