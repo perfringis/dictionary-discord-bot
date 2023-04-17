@@ -1,23 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DictionaryDto } from 'src/dto/dictionary.dto';
-import { Dictionary } from 'src/entities/dictionary.entity';
+import { DictionaryEntity } from 'src/entities/dictionary.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
 export class DictionaryService {
   constructor(
-    @InjectRepository(Dictionary)
-    private readonly dictionaryRepository: Repository<Dictionary>,
+    @InjectRepository(DictionaryEntity)
+    private readonly dictionaryRepository: Repository<DictionaryEntity>,
   ) {}
 
-  create(dictionaryDto: DictionaryDto): Promise<Dictionary> {
+  create(dictionaryDto: DictionaryDto): Promise<DictionaryEntity> {
     return this.dictionaryRepository.save(
-      new Dictionary(dictionaryDto.word, dictionaryDto.meaning),
+      new DictionaryEntity(dictionaryDto.word, dictionaryDto.meaning),
     );
   }
 
-  async getRandomWord(): Promise<Dictionary> {
+  async getRandomWord(): Promise<DictionaryEntity> {
     const randomIndex = Math.floor(
       Math.random() * (await this.dictionaryRepository.count()),
     );
