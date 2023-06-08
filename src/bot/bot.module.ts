@@ -8,6 +8,7 @@ import { DictionaryEntity } from '../entities/dictionary.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GetCommand } from './commands/get/get.command';
 import { CorrectCommand } from './commands/correct/correct.command';
+import { DumpCommand } from './commands/dump/dump.command';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { CorrectCommand } from './commands/correct/correct.command';
     AddCommand,
     GetCommand,
     CorrectCommand,
+    DumpCommand,
     DictionaryService,
   ],
 })

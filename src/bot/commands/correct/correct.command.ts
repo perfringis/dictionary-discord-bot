@@ -8,7 +8,7 @@ import { CommandInteraction } from 'discord.js';
 
 @Command({
   name: 'correct',
-  description: 'Zaktualizuj znaczenie',
+  description: 'Aktualizuj znaczenie',
 })
 @Injectable()
 export class CorrectCommand {

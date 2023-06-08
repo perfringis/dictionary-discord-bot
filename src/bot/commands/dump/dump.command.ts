@@ -1,14 +1,22 @@
-import { Command, Handler } from '@discord-nestjs/core';
+import { Command, Handler, InteractionEvent } from '@discord-nestjs/core';
 import { Injectable } from '@nestjs/common';
+import { AttachmentBuilder, CommandInteraction } from 'discord.js';
 
 @Command({
   name: 'dump',
-  description: 'Zwraca plik CSV z aktualnym stanem definicji',
+  description: 'Zwraca dump bazy danych',
 })
 @Injectable()
 export class DumpCommand {
   @Handler()
-  onDump(): string {
-    return 'TODO';
+  async onDump(
+    @InteractionEvent() interaction: CommandInteraction,
+  ): Promise<void> {
+
+    const file = new AttachmentBuilder('database.sqlite');
+
+    await interaction.reply({
+      files: [file]
+    });
   }
 }
